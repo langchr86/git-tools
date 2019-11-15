@@ -1,0 +1,61 @@
+---
+- name: install git tools
+  become: yes
+  package: name={{ item }}
+  with_items:
+    - git
+    - git-gui
+    - gitk
+
+- name: set user global git settings
+  git_config:
+    scope: global
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {name: 'user.name', value: '{{ user_name }}'}
+    - {name: 'user.email', value: '{{ user_email }}'}
+
+- name: set user global push strategy to simple
+  git_config:
+    scope: global
+    name: "push.default"
+    value: "simple"
+
+- name: add user global git aliases
+  git_config:
+    scope: global
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {name: 'alias.co', value: 'checkout'}
+    - {name: 'alias.ci', value: 'commit'}
+    - {name: 'alias.st', value: 'status'}
+    - {name: 'alias.br', value: 'branch'}
+    - {name: 'alias.ri', value: 'rebase -i'}
+    - {name: 'alias.ro', value: 'rebase --onto'}
+    - {name: 'alias.ra', value: 'rebase --abort'}
+    - {name: 'alias.rc', value: 'rebase --continue'}
+    - {name: 'alias.rs', value: 'rebase --skip'}
+    - {name: 'alias.ma', value: 'merge --abort'}
+    - {name: 'alias.mc', value: 'merge --continue'}
+    - {name: 'alias.mq', value: 'merge --quit'}
+    - {name: 'alias.pushfwl', value: 'push --force-with-lease'}
+    - {name: 'alias.cp', value: 'cherry-pick'}
+    - {name: 'alias.rh', value: 'reset --hard'}
+    - {name: 'alias.k', value: '!"gitk --all"'}
+    - {name: 'alias.g', value: '!"git gui"'}
+    - {name: 'alias.l', value: 'log --oneline'}
+    - {name: 'alias.graph', value: "log --graph --abbrev-commit --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s'"}
+
+- include: tasks/fix.yml
+- include: tasks/pdftotext.yml
+
+- include: tasks/rerere.yml
+  tags: [ never, rerere ]
+
+- include: tasks/editor_nano.yml
+  tags: [ never, editor_nano ]
+
+- include: tasks/prompt.yml
+  tags: [ never, prompt ]

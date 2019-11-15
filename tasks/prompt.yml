@@ -1,0 +1,22 @@
+---
+- include: tasks/ensure_local_folders_.yml
+
+- name: add git-prompt.bash
+  copy:
+    src: "git-prompt.bash"
+    dest: "{{ user_home }}/.local/share"
+
+- include: tasks/ensure_unix_line_endings.yml
+  vars:
+    file_path: "{{ user_home }}/.local/share/git-prompt.bash"
+
+- name: add sourcing of git-prompt.bash in .bashrc
+  blockinfile:
+    path: "{{ user_home }}/.bashrc"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK: git-prompt.bash"
+    block: |
+      if [ -f ~/.local/share/git-prompt.bash ]; then
+        source ~/.local/share/git-prompt.bash
+        PROMPT_COMMAND="git-find-head-file; $PROMPT_COMMAND"
+        export PS1=$GIT_PROMPT
+      fi

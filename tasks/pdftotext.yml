@@ -1,0 +1,40 @@
+---
+- name: install tools for pdftotext
+  become: yes
+  package: name={{ item }}
+  with_items:
+    - poppler-utils
+
+- include: tasks/ensure_local_folders_.yml
+
+- name: add git-pdftotext
+  copy:
+    src: "git-pdftotext"
+    dest: "{{ user_home }}/.local/bin"
+
+- name: make git-pdftotext executable
+  file:
+    path: "{{ user_home }}/.local/bin/git-pdftotext"
+    mode: 0755
+
+- include: tasks/ensure_unix_line_endings.yml
+  vars:
+    file_path: "{{ user_home }}/.local/bin/git-pdftotext"
+
+- name: Add git attributes file
+  lineinfile:
+    dest: "{{ user_home }}/.config/git/attributes"
+    regexp: "^[*][.]pdf diff="
+    line: "*.pdf diff=pdf"
+    state: present
+    insertafter: EOF
+    create: yes
+
+- name: enable pdf to text conversion
+  git_config:
+    scope: global
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {name: "diff.pdf.textconv", value: "{{ user_home }}/.local/bin/git-pdftotext"}
+    - {name: "diff.pdf.binary", value: "true"}

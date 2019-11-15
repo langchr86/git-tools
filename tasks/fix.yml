@@ -1,0 +1,16 @@
+---
+- include: tasks/ensure_local_folders_.yml
+
+- name: add git-fix
+  copy:
+    src: "git-fix"
+    dest: "{{ user_home }}/.local/bin"
+
+- name: make git-fix executable
+  file:
+    path: "{{ user_home }}/.local/bin/git-fix"
+    mode: 0755
+
+- include: tasks/ensure_unix_line_endings.yml
+  vars:
+    file_path: "{{ user_home }}/.local/bin/git-fix"

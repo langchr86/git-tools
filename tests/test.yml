@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - git-tools
+      tags: [ rerere, editor_nano, prompt ]

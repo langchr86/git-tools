@@ -1,0 +1,6 @@
+---
+- name: "ensure unix line endings: '{{ file_path }}'"
+  replace:
+    path: "{{ file_path }}"
+    regexp: "\r\n"
+    replace: "\n"

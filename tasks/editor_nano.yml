@@ -1,0 +1,11 @@
+---
+- name: install nano
+  become: yes
+  package:
+    name: "nano"
+
+- name: set user global git editor
+  git_config:
+    scope: global
+    name: "core.editor"
+    value: "nano"

@@ -1,0 +1,10 @@
+---
+- name: "ensure local folder exists: '{{ user_home }}/.local/bin'"
+  file:
+    path: "{{ user_home }}/.local/bin"
+    state: directory
+
+- name: "ensure local folder exists: '{{ user_home }}/.local/share'"
+  file:
+    path: "{{ user_home }}/.local/share"
+    state: directory

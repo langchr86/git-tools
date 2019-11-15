@@ -1,0 +1,6 @@
+---
+
+user_id: "{{ ansible_env.USER }}"
+user_home: "{{ ansible_env.HOME }}"
+user_name: "{{ user_id }}"
+user_email: "{{ user_name }}@gmail.com"
