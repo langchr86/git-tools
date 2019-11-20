@@ -2,8 +2,8 @@
 
 # Automatic evaluated variables.
 # Can be altered if role is not executed by the user that will use the features.
-git_user_id: "{{ ansible_env.USER }}"
-git_user_home: "{{ ansible_env.HOME }}"
+git_user_id: "{{ ansible_env.USER  | d('root') }}"
+git_user_home: "{{ ansible_env.HOME  | d('/root') }}"
 git_user_name: "{{ git_user_id }}"                  # name shown in git history
 git_user_email: "{{ git_user_name }}@gmail.com"     # e-mail address shown in git history
 
