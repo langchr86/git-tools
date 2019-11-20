@@ -1,6 +1,6 @@
 ---
 
-user_id: "{{ ansible_env.USER }}"
-user_home: "{{ ansible_env.HOME }}"
-user_name: "{{ user_id }}"
-user_email: "{{ user_name }}@gmail.com"
+git_user_id: "{{ ansible_env.USER }}"
+git_user_home: "{{ ansible_env.HOME }}"
+git_user_name: "{{ git_user_id }}"
+git_user_email: "{{ git_user_name }}@gmail.com"

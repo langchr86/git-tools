@@ -4,15 +4,15 @@
 - name: add git-prompt.bash
   copy:
     src: "git-prompt.bash"
-    dest: "{{ user_home }}/.local/share"
+    dest: "{{ git_user_home }}/.local/share"
 
 - import_tasks: tasks/ensure_unix_line_endings.yml
   vars:
-    file_path: "{{ user_home }}/.local/share/git-prompt.bash"
+    file_path: "{{ git_user_home }}/.local/share/git-prompt.bash"
 
 - name: add sourcing of git-prompt.bash in .bashrc
   blockinfile:
-    path: "{{ user_home }}/.bashrc"
+    path: "{{ git_user_home }}/.bashrc"
     marker: "# {mark} ANSIBLE MANAGED BLOCK: git-prompt.bash"
     block: |
       if [ -f ~/.local/share/git-prompt.bash ]; then

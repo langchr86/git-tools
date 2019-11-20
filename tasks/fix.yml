@@ -4,13 +4,13 @@
 - name: add git-fix
   copy:
     src: "git-fix"
-    dest: "{{ user_home }}/.local/bin"
+    dest: "{{ git_user_home }}/.local/bin"
 
 - name: make git-fix executable
   file:
-    path: "{{ user_home }}/.local/bin/git-fix"
+    path: "{{ git_user_home }}/.local/bin/git-fix"
     mode: 0755
 
 - import_tasks: tasks/ensure_unix_line_endings.yml
   vars:
-    file_path: "{{ user_home }}/.local/bin/git-fix"
+    file_path: "{{ git_user_home }}/.local/bin/git-fix"

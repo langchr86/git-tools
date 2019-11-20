@@ -1,10 +1,10 @@
 ---
-- name: "ensure local folder exists: '{{ user_home }}/.local/bin'"
+- name: "ensure local folder exists: '{{ git_user_home }}/.local/bin'"
   file:
-    path: "{{ user_home }}/.local/bin"
+    path: "{{ git_user_home }}/.local/bin"
     state: directory
 
-- name: "ensure local folder exists: '{{ user_home }}/.local/share'"
+- name: "ensure local folder exists: '{{ git_user_home }}/.local/share'"
   file:
-    path: "{{ user_home }}/.local/share"
+    path: "{{ git_user_home }}/.local/share"
     state: directory
