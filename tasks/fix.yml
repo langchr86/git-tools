@@ -1,5 +1,5 @@
 ---
-- include: tasks/ensure_local_folders_.yml
+- import_tasks: tasks/ensure_local_folders.yml
 
 - name: add git-fix
   copy:
@@ -11,6 +11,6 @@
     path: "{{ user_home }}/.local/bin/git-fix"
     mode: 0755
 
-- include: tasks/ensure_unix_line_endings.yml
+- import_tasks: tasks/ensure_unix_line_endings.yml
   vars:
     file_path: "{{ user_home }}/.local/bin/git-fix"

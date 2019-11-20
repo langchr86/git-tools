@@ -48,14 +48,14 @@
     - {name: 'alias.l', value: 'log --oneline'}
     - {name: 'alias.graph', value: "log --graph --abbrev-commit --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s'"}
 
-- include: tasks/fix.yml
-- include: tasks/pdftotext.yml
+- import_tasks: tasks/fix.yml
+- import_tasks: tasks/pdftotext.yml
 
-- include: tasks/rerere.yml
+- import_tasks: tasks/rerere.yml
   tags: [ never, rerere ]
 
-- include: tasks/editor_nano.yml
+- import_tasks: tasks/editor_nano.yml
   tags: [ never, editor_nano ]
 
-- include: tasks/prompt.yml
+- import_tasks: tasks/prompt.yml
   tags: [ never, prompt ]
