@@ -45,10 +45,10 @@
     - {name: 'alias.rh', value: 'reset --hard'}
     - {name: 'alias.k', value: "!gitk --all"}
     - {name: 'alias.g', value: "!git gui"}
+    - {name: 'alias.fix', value: "!fix() { git commit --fixup $1 && GIT_SEQUENCE_EDITOR=: git rebase --interactive --autosquash --autostash $1~1; }; fix"}
     - {name: 'alias.l', value: 'log --oneline'}
     - {name: 'alias.graph', value: "log --graph --abbrev-commit --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s'"}
 
-- import_tasks: tasks/fix.yml
 - import_tasks: tasks/pdftotext.yml
 
 - import_tasks: tasks/rerere.yml
