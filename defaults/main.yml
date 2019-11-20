@@ -4,3 +4,7 @@ git_user_id: "{{ ansible_env.USER }}"
 git_user_home: "{{ ansible_env.HOME }}"
 git_user_name: "{{ git_user_id }}"
 git_user_email: "{{ git_user_name }}@gmail.com"
+
+git_rerere: off
+git_editor_nano: off
+git_prompt: off

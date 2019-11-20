@@ -52,10 +52,10 @@
 - import_tasks: tasks/pdftotext.yml
 
 - import_tasks: tasks/rerere.yml
-  tags: [ never, rerere ]
+  when: git_rerere
 
 - import_tasks: tasks/editor_nano.yml
-  tags: [ never, editor_nano ]
+  when: git_editor_nano
 
 - import_tasks: tasks/prompt.yml
-  tags: [ never, prompt ]
+  when: git_prompt

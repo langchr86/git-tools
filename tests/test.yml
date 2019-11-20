@@ -1,6 +1,4 @@
 ---
 - hosts: localhost
-  remote_user: root
   roles:
-    - git-tools
-      tags: [ rerere, editor_nano, prompt ]
+    - { role: git-tools, git_rerere: on, git_editor_nano: on, git_prompt: on }
