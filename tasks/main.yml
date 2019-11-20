@@ -41,7 +41,7 @@
     - {name: 'alias.mc', value: 'merge --continue'}
     - {name: 'alias.mq', value: 'merge --quit'}
     - {name: 'alias.pushfwl', value: 'push --force-with-lease'}
-    - {name: 'alias.cp', value: 'cherry-pick'}
+    - {name: 'alias.chp', value: 'cherry-pick'}
     - {name: 'alias.rh', value: 'reset --hard'}
     - {name: 'alias.k', value: "!gitk --all"}
     - {name: 'alias.g', value: "!git gui"}
