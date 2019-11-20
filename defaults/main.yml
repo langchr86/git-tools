@@ -1,10 +1,13 @@
 ---
 
+# Automatic evaluated variables.
+# Can be altered if role is not executed by the user that will use the features.
 git_user_id: "{{ ansible_env.USER }}"
 git_user_home: "{{ ansible_env.HOME }}"
-git_user_name: "{{ git_user_id }}"
-git_user_email: "{{ git_user_name }}@gmail.com"
+git_user_name: "{{ git_user_id }}"                  # name shown in git history
+git_user_email: "{{ git_user_name }}@gmail.com"     # e-mail address shown in git history
 
-git_rerere: off
-git_editor_nano: off
-git_prompt: off
+# Additional features that can be enabled.
+git_rerere: off         # enable rerere in git config
+git_editor_nano: off    # install and define nano as git editor
+git_prompt: off         # install some scripts and define prompt to show git branch. Needs bash!

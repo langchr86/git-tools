@@ -3,48 +3,64 @@ git-tools
 
 [![Build Status](https://travis-ci.com/langchr86/git-tools.svg?branch=master)](https://travis-ci.com/langchr86/git-tools)
 
-
-**README is WORK-IN-PROGRESS**
-
-
-
-A brief description of the role goes here.
-
-
-
-All the supported scripts etc do only work for bash.
+Ansible role which does prepare some usual needed settings, aliases and other tools for effective git usage.
 
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role should work on most linux distributions.
+Tested on Ubuntu 18.04.
+The only requirements is bash, if the git prompt feature is activated.
+
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+All variable that may be manipulated by the user are collected in defaults/main.yml.
+See the inline description there.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This role is completely self-containing and has no dependencies.
+
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+See `tests` folder for example playbooks.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+To be able to install the role you can use the command:
+
+~~~
+ansible-galaxy install git+https://github.com/langchr86/git-tools.git,master
+~~~
+
+or you define it in the `requirements.yml` file:
+
+~~~
+collections:
+# With the collection name, version, and source options
+- name: langchr86.git-tools
+  version: 'master'
+  source: 'git+https://github.com/langchr86/git-tools.git'
+~~~
+
+and then install with:
+
+~~~
+ansible-galaxy install -r requirements.yml
+~~~
+
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Christian Lang
+[lang.chr86@gmail.com](mailto:lang.chr86@gmail.com)
