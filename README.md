@@ -1,6 +1,13 @@
 git-tools
 =========
 
+[![Build Status](https://travis-ci.com/langchr86/git-tools.svg?branch=master)](https://travis-ci.com/langchr86/git-tools)
+
+
+**README is WORK-IN-PROGRESS**
+
+
+
 A brief description of the role goes here.
 
 
