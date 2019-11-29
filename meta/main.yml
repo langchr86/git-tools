@@ -25,21 +25,19 @@ galaxy_info:
   # If you don't wish to enumerate all versions for a particular platform, use 'all'.
   # To view available platforms and versions (or releases), visit:
   # https://galaxy.ansible.com/api/v1/platforms/
-  #
-  # platforms:
-  # - name: Fedora
-  #   versions:
-  #   - all
-  #   - 25
-  # - name: SomePlatform
-  #   versions:
-  #   - all
-  #   - 1.0
-  #   - 7
-  #   - 99.99
   platforms:
-  - ubuntu:
-      - 18.04
+  - name: Ubuntu
+    versions:
+    - bionic
+  - name: Centos
+    versions:
+    - 7
+  - name: Fedora
+    versions:
+    - 31
+  - name: Debian
+    versions:
+    - buster
 
   galaxy_tags:
   - git

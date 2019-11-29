@@ -1,15 +1,17 @@
 ---
 sudo: required
 
+# Adapted from: https://github.com/drhelius/travis-ansible-demo
+
 env:
   - distribution: ubuntu
     version: bionic
-  #- distribution: centos
-  #  version: 8
-  #- distribution: fedora
-  #  version: 31
-  #- distribution: debian
-  #  version: buster
+  - distribution: centos
+    version: 7
+  - distribution: fedora
+    version: 31
+  - distribution: debian
+    version: buster
 
 services:
   - docker
