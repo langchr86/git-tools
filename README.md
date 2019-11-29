@@ -93,7 +93,7 @@ To be able to test with GUI tools you need to test on a system with X11 capabili
 Usually this is your localhost.
 
 To run the example playbook you can checkout the repo,
-adapt [`testing/playbook.yml`](testing/playbook.yml),
+adapt [`testing/playbook.yml`](testing/playbook.yml)
 and run it on localhost by using [`run_local.sh`](run_local.sh).
 
 
@@ -101,6 +101,14 @@ License
 -------
 
 MIT
+
+
+Versioning
+----------
+
+There exists no version numbers, releases, tags or branches.
+The master should be considered the current stable release.
+All other existing branches are feature/development branches and are considered unstable.
 
 
 Author Information
