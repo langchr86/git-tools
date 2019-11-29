@@ -3,33 +3,36 @@ git-tools
 
 [![Build Status](https://travis-ci.com/langchr86/git-tools.svg?branch=master)](https://travis-ci.com/langchr86/git-tools)
 
-Ansible role which does prepare some usual needed settings, aliases and other tools for effective git usage.
+Ansible role which does prepare some usual needed settings, aliases and other tools for efficient git usage.
 
 
 Requirements
 ------------
 
 This role should work on most linux distributions.
-Tested on Ubuntu 18.04.
-The only requirements is bash, if the git prompt feature is activated.
+Tested on Ubuntu, Centos, Fedora and Debian.
+See [`.travis.yml`](.travis.yml) for more information about CI-testing.
+
+The only requirements is bash, if the `git_prompt`-feature is activated.
 
 
 Role Variables
 --------------
 
-All variable that may be manipulated by the user are collected in defaults/main.yml.
+All variable that may be manipulated by the user are collected in [`defaults/main.yml`](defaults/main.yml) .
 See the inline description there.
+
 
 Dependencies
 ------------
 
-This role is completely self-containing and has no dependencies.
+This role is completely self-containing and has no dependencies to other ansible roles.
 
 
-Example Playbook
-----------------
+Usage
+-----
 
-See `tests` folder for example playbooks.
+See [`testing/playbook.yml`](testing/playbook.yml) for example playbook.
 
 To be able to install the role you can use the command:
 
@@ -37,14 +40,11 @@ To be able to install the role you can use the command:
 ansible-galaxy install git+https://github.com/langchr86/git-tools.git,master
 ~~~
 
-or you define it in the `requirements.yml` file:
+or you define it in [`requirements.yml`](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#installing-multiple-roles-from-a-file):
 
 ~~~
-collections:
-# With the collection name, version, and source options
-- name: langchr86.git-tools
+- src: 'https://github.com/langchr86/git-tools.git'
   version: 'master'
-  source: 'git+https://github.com/langchr86/git-tools.git'
 ~~~
 
 and then install with:
@@ -54,10 +54,54 @@ ansible-galaxy install -r requirements.yml
 ~~~
 
 
+Development
+-----------
+
+### Docker
+
+To develop and test this role the docker infrastructure, which is also used by travis, can be used.
+Ubuntu is used as distro by default.
+
+~~~ {.bash}
+# Build the docker image.
+./travis/1_create.sh
+
+# Create docker container and run it with the correct mounted volumes.
+./travis/2_run.sh
+
+# Connect into the container.
+./travis/3_connect.sh
+
+# Now you are logged-in the docker container.
+
+cd /etc/ansible/roles/git-tools/
+./travis/4_test.sh
+
+# Now the example playbook should run and you can test the installed features.
+
+# Leave the container with the following command when you are finished developing/testing.
+exit
+
+# Remove all signs of the docker container.
+./travis/5_remove.sh
+~~~
+
+
+### Localhost
+
+To be able to test with GUI tools you need to test on a system with X11 capabilities.
+Usually this is your localhost.
+
+To run the example playbook you can checkout the repo,
+adapt [`testing/playbook.yml`](testing/playbook.yml),
+and run it on localhost by using [`run_local.sh`](run_local.sh).
+
+
 License
 -------
 
 MIT
+
 
 Author Information
 ------------------

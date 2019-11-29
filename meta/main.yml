@@ -1,6 +1,6 @@
 galaxy_info:
   author: Christian Lang, lang.chr86@gmail.com
-  description: Does prepare some usual needed settings, aliases and other tools for effective git usage.
+  description: Does prepare some usual needed settings, aliases and other tools for efficient git usage.
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -13,7 +13,7 @@ galaxy_info:
   # - GPL-3.0-only
   # - Apache-2.0
   # - CC-BY-4.0
-  license: license (GPL-2.0-or-later, MIT, etc)
+  license: license (MIT)
 
   min_ansible_version: 2.9
 
