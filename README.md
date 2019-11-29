@@ -56,6 +56,9 @@ This role is completely self-containing and has no dependencies to other ansible
 Usage
 -----
 
+> If you just want to use these tools without creating your own playbook etc.
+> you have to just install ansible and then use the described way under [Development-Localhost](#localhost).
+
 See [`testing/playbook.yml`](testing/playbook.yml) for example playbook.
 
 To be able to install the role you can use the command:
@@ -115,6 +118,7 @@ exit
 
 To be able to test with GUI tools you need to test on a system with X11 capabilities.
 Usually this is your localhost.
+Ensure you have correctly installed `ansible` on your machine.
 
 To run the example playbook you can checkout the repo,
 adapt [`testing/playbook.yml`](testing/playbook.yml)
