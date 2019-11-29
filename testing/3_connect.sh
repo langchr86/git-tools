@@ -2,4 +2,4 @@
 
 container_id=${1:-/tmp/git-tools-docker-id}
 
-docker exec -it "$(cat ${container_id})" /bin/bash
+docker exec -it "$(cat ${container_id})" /bin/sh
