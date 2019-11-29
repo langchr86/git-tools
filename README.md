@@ -6,6 +6,30 @@ git-tools
 Ansible role which does prepare some usual needed settings, aliases and other tools for efficient git usage.
 
 
+Features
+--------
+
+### Aliases
+
+![aliases](images/git-aliases.png)
+
+Many small shortcuts for useful commands.
+Like `git fix <commit_hash>` which combines a `git commit --fixup` and the corresponding `git rebase -i`.
+
+### Prompt
+
+![prompt](images/git-prompt.png)
+
+### PDF diffs
+
+![pdf](images/pdftotext.png)
+
+### Graphs
+
+![oneline](images/git-l.png)
+![tree](images/git-graph.png)
+
+
 Requirements
 ------------
 
