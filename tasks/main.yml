@@ -40,6 +40,9 @@
     - {name: 'alias.ma', value: 'merge --abort'}
     - {name: 'alias.mc', value: 'merge --continue'}
     - {name: 'alias.mq', value: 'merge --quit'}
+    - {name: 'alias.bs', value: 'bisect start'}
+    - {name: 'alias.bb', value: 'bisect bad'}
+    - {name: 'alias.bg', value: 'bisect good'}
     - {name: 'alias.pushfwl', value: 'push --force-with-lease'}
     - {name: 'alias.chp', value: 'cherry-pick'}
     - {name: 'alias.rh', value: 'reset --hard'}
