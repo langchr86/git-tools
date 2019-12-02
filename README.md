@@ -16,6 +16,19 @@ Features
 Many small shortcuts for useful commands.
 Like `git fix <commit_hash>` which combines a `git commit --fixup` and the corresponding `git rebase -i`.
 
+~~~
+// stage your changes e.g. with git gui
+$ git gui
+
+// check which commit to fix e.g. with git l
+$ git l
+
+// now append the staged changes to the selected commit
+$ git fix <commit-hash>
+
+// this results in rebasing and therefore changing the history until the selected commit
+~~~
+
 ### Prompt
 
 ![prompt](images/git-prompt.png)
