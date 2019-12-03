@@ -30,7 +30,7 @@
   with_items:
     - {name: 'alias.co', value: 'checkout'}
     - {name: 'alias.ci', value: 'commit'}
-    - {name: 'alias.st', value: 'status'}
+    - {name: 'alias.st', value: 'status --short'}
     - {name: 'alias.br', value: 'branch'}
     - {name: 'alias.ri', value: 'rebase -i'}
     - {name: 'alias.ro', value: 'rebase --onto'}
