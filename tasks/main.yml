@@ -22,6 +22,12 @@
     name: "push.default"
     value: "simple"
 
+- name: set user global pull strategy to always use --rebase
+  git_config:
+    scope: global
+    name: "pull.rebase"
+    value: "true"
+
 - name: add user global git aliases
   git_config:
     scope: global
