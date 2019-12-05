@@ -10,25 +10,27 @@
 - name: add git-pdftotext
   copy:
     src: "git-pdftotext"
-    dest: "{{ git_user_home }}/.local/bin"
+    dest: "{{ git_pdftotext_file }}"
 
-- name: make git-pdftotext executable
+- name: make script executable
   file:
-    path: "{{ git_user_home }}/.local/bin/git-pdftotext"
+    path: "{{ git_pdftotext_file }}"
     mode: 0755
 
 - import_tasks: tasks/ensure_unix_line_endings.yml
   vars:
-    file_path: "{{ git_user_home }}/.local/bin/git-pdftotext"
+    file_path: "{{ git_pdftotext_file }}"
 
-- name: Add git attributes file
+- name: define git attributes
   lineinfile:
-    dest: "{{ git_user_home }}/.config/git/attributes"
-    regexp: "^[*][.]pdf diff="
-    line: "*.pdf diff=pdf"
+    dest: "{{ git_attributes_file }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
     state: present
     insertafter: EOF
     create: yes
+  with_items:
+    - {regexp: "^[*][.]pdf diff=", line: "*.pdf diff=pdftotext"}
 
 - name: enable pdf to text conversion
   git_config:
@@ -36,5 +38,5 @@
     name: "{{ item.name }}"
     value: "{{ item.value }}"
   with_items:
-    - {name: "diff.pdf.textconv", value: "{{ git_user_home }}/.local/bin/git-pdftotext"}
-    - {name: "diff.pdf.binary", value: "true"}
+    - {name: "diff.pdftotext.textconv", value: "{{ git_pdftotext_file }}"}
+    - {name: "diff.pdftotext.binary", value: "true"}

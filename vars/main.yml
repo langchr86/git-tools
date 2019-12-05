@@ -1,0 +1,5 @@
+---
+
+git_attributes_file: "{{ git_user_home }}/.config/git/attributes"
+
+git_pdftotext_file: "{{ git_user_home }}/.local/bin/git-pdftotext"
