@@ -33,9 +33,16 @@ $ git fix <commit-hash>
 
 ![prompt](images/git-prompt.png)
 
-### PDF diffs
+### Additional diffs
 
 ![pdf](images/pdftotext.png)
+
+Additional diff strategies to be able to also work with some binary files, like:
+
+* `doc`, `docx`
+* `xls`, `xlsx`
+* `pdf`
+* `zip`, `tar`, `bz2`, etc.
 
 ### Graphs
 
