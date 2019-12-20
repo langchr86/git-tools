@@ -35,6 +35,7 @@
     value: "{{ item.value }}"
   with_items:
     - {name: 'alias.co', value: 'checkout'}
+    - {name: 'alias.cob', value: 'checkout -b'}
     - {name: 'alias.ci', value: 'commit'}
     - {name: 'alias.st', value: 'status --short'}
     - {name: 'alias.br', value: 'branch'}
