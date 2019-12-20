@@ -104,18 +104,18 @@ Ubuntu is used as distro by default.
 
 ~~~ {.bash}
 # Build the docker image.
-./travis/1_create.sh
+./testing/1_create.sh
 
 # Create docker container and run it with the correct mounted volumes.
-./travis/2_run.sh
+./testing/2_run.sh
 
 # Connect into the container.
-./travis/3_connect.sh
+./testing/3_connect.sh
 
 # Now you are logged-in the docker container.
 
 cd /etc/ansible/roles/git-tools/
-./travis/4_test.sh
+./testing/4_test.sh
 
 # Now the example playbook should run and you can test the installed features.
 
@@ -123,7 +123,7 @@ cd /etc/ansible/roles/git-tools/
 exit
 
 # Remove all signs of the docker container.
-./travis/5_remove.sh
+./testing/5_remove.sh
 ~~~
 
 
