@@ -43,6 +43,9 @@
     - {name: 'alias.st', value: 'status --short'}
     - {name: 'alias.br', value: 'branch'}
     - {name: 'alias.rpo', value: 'remote prune origin'}
+    - {name: 'alias.spu', value: 'stash push'}
+    - {name: 'alias.spo', value: 'stash pop'}
+    - {name: 'alias.sdr', value: 'stash drop'}
     - {name: 'alias.ri', value: 'rebase -i'}
     - {name: 'alias.ro', value: 'rebase --onto'}
     - {name: 'alias.ra', value: 'rebase --abort'}
