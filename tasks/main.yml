@@ -1,4 +1,7 @@
 ---
+- import_tasks: tasks/centos_prerequisites.yml
+  when: ansible_distribution == "CentOS"
+
 - name: install git tools
   become: yes
   package: name={{ item }}

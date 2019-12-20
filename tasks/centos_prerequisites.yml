@@ -1,0 +1,7 @@
+---
+- name: add LUX repo for centos 7
+  become: yes
+  package: name={{ item }}
+  with_items:
+    - "http://repo.iotti.biz/CentOS/7/noarch/lux-release-7-1.noarch.rpm"
+  when: ansible_distribution_major_version == "7"
