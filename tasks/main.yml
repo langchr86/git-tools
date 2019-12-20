@@ -62,7 +62,9 @@
     - {name: 'alias.l', value: 'log --oneline'}
     - {name: 'alias.graph', value: "log --graph --abbrev-commit --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s'"}
 
+- import_tasks: tasks/docxtotext.yml
 - import_tasks: tasks/pdftotext.yml
+- import_tasks: tasks/xlsxtotext.yml
 
 - import_tasks: tasks/rerere.yml
   when: git_rerere

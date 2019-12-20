@@ -2,4 +2,6 @@
 
 git_attributes_file: "{{ git_user_home }}/.config/git/attributes"
 
+git_docxtotext_file: "{{ git_user_home }}/.local/bin/git-docxtotext"
 git_pdftotext_file: "{{ git_user_home }}/.local/bin/git-pdftotext"
+git_xlsxtotext_file: "{{ git_user_home }}/.local/bin/git-xlsxtotext"

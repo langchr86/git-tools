@@ -1,0 +1,45 @@
+---
+- name: install tools for docxtotext
+  become: yes
+  package: name={{ item }}
+  with_items:
+    - catdoc
+
+- import_tasks: tasks/ensure_local_folders.yml
+
+- name: add git-docxtotext
+  copy:
+    src: "git-docxtotext"
+    dest: "{{ git_docxtotext_file }}"
+
+- name: make script executable
+  file:
+    path: "{{ git_docxtotext_file }}"
+    mode: 0755
+
+- import_tasks: tasks/ensure_unix_line_endings.yml
+  vars:
+    file_path: "{{ git_docxtotext_file }}"
+
+- name: define git attributes
+  lineinfile:
+    dest: "{{ git_attributes_file }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    insertafter: EOF
+    create: yes
+  with_items:
+    - {regexp: "^[*][.]docx diff=", line: "*.docx diff=docxtotext"}
+    - {regexp: "^[*][.]doc diff=", line: "*.doc diff=catdoc"}
+
+- name: enable doc(x) to text conversion
+  git_config:
+    scope: global
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {name: "diff.docxtotext.textconv", value: "{{ git_docxtotext_file }}"}
+    - {name: "diff.docxtotext.binary", value: "true"}
+    - {name: "diff.catdoc.textconv", value: "catdoc"}
+    - {name: "diff.catdoc.binary", value: "true"}

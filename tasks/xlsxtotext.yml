@@ -1,0 +1,43 @@
+---
+- name: install tools for xlsxtotext
+  become: yes
+  package: name={{ item }}
+  with_items:
+    - gnumeric
+
+- import_tasks: tasks/ensure_local_folders.yml
+
+- name: add git-pdftotext
+  copy:
+    src: "git-xlsxtotext"
+    dest: "{{ git_xlsxtotext_file }}"
+
+- name: make script executable
+  file:
+    path: "{{ git_xlsxtotext_file }}"
+    mode: 0755
+
+- import_tasks: tasks/ensure_unix_line_endings.yml
+  vars:
+    file_path: "{{ git_xlsxtotext_file }}"
+
+- name: define git attributes
+  lineinfile:
+    dest: "{{ git_attributes_file }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    insertafter: EOF
+    create: yes
+  with_items:
+    - {regexp: "^[*][.]xls diff=", line: "*.xls diff=xlsxtotext"}
+    - {regexp: "^[*][.]xlsx diff=", line: "*.xlsx diff=xlsxtotext"}
+
+- name: enable xls(x) to text conversion
+  git_config:
+    scope: global
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {name: "diff.xlsxtotext.textconv", value: "{{ git_xlsxtotext_file }}"}
+    - {name: "diff.xlsxtotext.binary", value: "true"}
