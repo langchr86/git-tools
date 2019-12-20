@@ -1,0 +1,45 @@
+---
+- name: install tools for archivetotext
+  become: yes
+  package: name={{ item }}
+  with_items:
+    - unzip
+    - gzip
+    - bzip2
+    - tar
+
+- name: define git attributes
+  lineinfile:
+    dest: "{{ git_attributes_file }}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    insertafter: EOF
+    create: yes
+  with_items:
+    - {regexp: "^[*][.]zip diff=", line: "*.zip diff=zip"}
+    - {regexp: "^[*][.]gz diff=", line: "*.gz diff=gzip"}
+    - {regexp: "^[*][.]gzip diff=", line: "*.gzip diff=gzip"}
+    - {regexp: "^[*][.]bz2 diff=", line: "*.bz2 diff=bz2"}
+    - {regexp: "^[*][.]tar diff=", line: "*.tar diff=tar"}
+    - {regexp: "^[*][.]tar.bz2 diff=", line: "*.tar.bz2 diff=tar-bz2"}
+    - {regexp: "^[*][.]tar.gz diff=", line: "*.tar.gz diff=tar-gz"}
+
+- name: enable text conversions for archives
+  git_config:
+    scope: global
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {name: "diff.zip.textconv", value: "unzip -p"}
+    - {name: "diff.zip.binary", value: "true"}
+    - {name: "diff.gzip.textconv", value: "zcat"}
+    - {name: "diff.gzip.binary", value: "true"}
+    - {name: "diff.bz2.textconv", value: "bzcat"}
+    - {name: "diff.bz2.binary", value: "true"}
+    - {name: "diff.tar.textconv", value: "tar --to-stdout -xf"}
+    - {name: "diff.tar.binary", value: "true"}
+    - {name: "diff.tar-bz2.textconv", value: "tar --to-stdout -xjf"}
+    - {name: "diff.tar-bz2.binary", value: "true"}
+    - {name: "diff.tar-gz.textconv", value: "tar --to-stdout -xzf"}
+    - {name: "diff.tar-gz.binary", value: "true"}
