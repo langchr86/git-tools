@@ -13,5 +13,9 @@
         #git_user_email: "lang.chr86@gmail.com",
         git_rerere: on,
         git_editor_nano: on,
-        git_prompt: on
+        git_prompt: on,
+        git_archivestotext: on,
+        git_docxtotext: on,
+        git_pdftotext: on,
+        git_xlsxtotext: on,
     }

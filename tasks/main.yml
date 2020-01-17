@@ -67,9 +67,13 @@
     - {name: 'alias.graph', value: "log --graph --abbrev-commit --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s'"}
 
 - import_tasks: tasks/archivestotext.yml
+  when: git_archivestotext
 - import_tasks: tasks/docxtotext.yml
+  when: git_docxtotext
 - import_tasks: tasks/pdftotext.yml
+  when: git_pdftotext
 - import_tasks: tasks/xlsxtotext.yml
+  when: git_xlsxtotext
 
 - import_tasks: tasks/rerere.yml
   when: git_rerere
