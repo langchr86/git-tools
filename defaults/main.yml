@@ -8,6 +8,7 @@ git_user_name: "{{ git_user_id }}"                  # name shown in git history
 git_user_email: "{{ git_user_name }}@gmail.com"     # e-mail address shown in git history
 
 # Additional features that can be enabled.
+git_aliases: off        # enable predefined git aliases
 git_rerere: off         # enable rerere in git config
 git_editor_nano: off    # install and define nano as git editor
 git_prompt: off         # install some scripts and define prompt to show git branch. Needs bash!

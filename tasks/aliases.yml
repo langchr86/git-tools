@@ -1,0 +1,35 @@
+---
+- name: add user global git aliases
+  git_config:
+    scope: global
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  with_items:
+    - {name: 'alias.co', value: 'checkout'}
+    - {name: 'alias.cob', value: 'checkout -b'}
+    - {name: 'alias.ci', value: 'commit'}
+    - {name: 'alias.st', value: 'status --short'}
+    - {name: 'alias.br', value: 'branch'}
+    - {name: 'alias.rpo', value: 'remote prune origin'}
+    - {name: 'alias.spu', value: 'stash push'}
+    - {name: 'alias.spo', value: 'stash pop'}
+    - {name: 'alias.sdr', value: 'stash drop'}
+    - {name: 'alias.ri', value: 'rebase -i'}
+    - {name: 'alias.ro', value: 'rebase --onto'}
+    - {name: 'alias.ra', value: 'rebase --abort'}
+    - {name: 'alias.rc', value: 'rebase --continue'}
+    - {name: 'alias.rs', value: 'rebase --skip'}
+    - {name: 'alias.ma', value: 'merge --abort'}
+    - {name: 'alias.mc', value: 'merge --continue'}
+    - {name: 'alias.mq', value: 'merge --quit'}
+    - {name: 'alias.bb', value: 'bisect bad'}
+    - {name: 'alias.bg', value: 'bisect good'}
+    - {name: 'alias.bs', value: 'bisect skip'}
+    - {name: 'alias.pushfwl', value: 'push --force-with-lease'}
+    - {name: 'alias.chp', value: 'cherry-pick'}
+    - {name: 'alias.rh', value: 'reset --hard'}
+    - {name: 'alias.k', value: "!gitk --all"}
+    - {name: 'alias.g', value: "!git gui"}
+    - {name: 'alias.fix', value: "!fix() { git commit --fixup $1 && GIT_SEQUENCE_EDITOR=: git rebase --interactive --autosquash --autostash $1~1; }; fix"}
+    - {name: 'alias.l', value: 'log --oneline'}
+    - {name: 'alias.graph', value: "log --graph --abbrev-commit --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s'"}

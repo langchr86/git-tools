@@ -11,6 +11,7 @@
     - { role: git-tools,
         #git_user_name: "Christian Lang",
         #git_user_email: "lang.chr86@gmail.com",
+        git_aliases: on,
         git_rerere: on,
         git_editor_nano: on,
         git_prompt: on,
