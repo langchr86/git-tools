@@ -10,15 +10,6 @@
     - git-gui
     - gitk
 
-- name: set user global git settings
-  git_config:
-    scope: global
-    name: "{{ item.name }}"
-    value: "{{ item.value }}"
-  with_items:
-    - {name: 'user.name', value: '{{ git_user_name }}'}
-    - {name: 'user.email', value: '{{ git_user_email }}'}
-
 - name: set user global push strategy to simple
   git_config:
     scope: global
@@ -30,6 +21,9 @@
     scope: global
     name: "pull.rebase"
     value: "true"
+
+- import_tasks: tasks/user.yml
+  when: git_user_name != ""
 
 - import_tasks: tasks/aliases.yml
   when: git_aliases
