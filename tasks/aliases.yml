@@ -26,6 +26,7 @@
     - {name: 'alias.bg', value: 'bisect good'}
     - {name: 'alias.bs', value: 'bisect skip'}
     - {name: 'alias.pushfwl', value: 'push --force-with-lease'}
+    - {name: 'alias.pusho', value: "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"}
     - {name: 'alias.chp', value: 'cherry-pick'}
     - {name: 'alias.rh', value: 'reset --hard'}
     - {name: 'alias.k', value: "!gitk --all"}
