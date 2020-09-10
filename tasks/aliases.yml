@@ -9,6 +9,7 @@
     - {name: 'alias.cob', value: 'checkout -b'}
     - {name: 'alias.ci', value: 'commit'}
     - {name: 'alias.st', value: 'status --short'}
+    - {name: 'alias.rank', value: 'shortlog -sn --no-merges'}
     - {name: 'alias.br', value: 'branch'}
     - {name: 'alias.rpo', value: 'remote prune origin'}
     - {name: 'alias.spu', value: 'stash push'}
