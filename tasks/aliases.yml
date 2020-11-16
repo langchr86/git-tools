@@ -29,7 +29,9 @@
     - {name: 'alias.pushfwl', value: 'push --force-with-lease'}
     - {name: 'alias.pusho', value: "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"}
     - {name: 'alias.chp', value: 'cherry-pick'}
-    - {name: 'alias.rh', value: 'reset --hard'}
+    - {name: 'alias.reh', value: 'reset --hard'}
+    - {name: 'alias.res', value: 'reset --soft'}
+    - {name: 'alias.reso', value: 'reset --soft HEAD~'}
     - {name: 'alias.k', value: "!gitk --all"}
     - {name: 'alias.g', value: "!git gui"}
     - {name: 'alias.fix', value: "!fix() { git commit --fixup $1 && GIT_SEQUENCE_EDITOR=: git rebase --interactive --autosquash --autostash $1~1; }; fix"}
