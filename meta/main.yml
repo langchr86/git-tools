@@ -29,6 +29,7 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - bionic
+    - focal
   - name: Centos
     versions:
     - 7

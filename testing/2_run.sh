@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
-distro=${1:-ubuntu-bionic}
+distro=${1:-ubuntu-focal}
 container_id=${2:-/tmp/git-tools-docker-id}
 
 docker run \
