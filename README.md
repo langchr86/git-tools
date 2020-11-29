@@ -1,7 +1,7 @@
 git-tools
 =========
 
-[![Build Status](https://travis-ci.com/langchr86/git-tools.svg?branch=master)](https://travis-ci.com/langchr86/git-tools)
+[![Software Build](https://github.com/langchr86/git-tools/workflows/ansible_run/badge.svg)](https://github.com/langchr86/git-tools/actions?query=workflow%3Aansible_run)
 
 Ansible role which does prepare some usual needed settings, aliases and other tools for efficient git usage.
 
@@ -55,7 +55,7 @@ Requirements
 
 This role should work on most linux distributions.
 Tested on Ubuntu, Centos, Fedora and Debian.
-See [`.travis.yml`](.travis.yml) for more information about CI-testing.
+See [`ansible_run.yml`](.github/workflows/ansible_run.yml) for more information about CI-testing.
 
 The only requirements is bash, if the `git_prompt`-feature is activated.
 
