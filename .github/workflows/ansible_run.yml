@@ -14,7 +14,7 @@ jobs:
           - fedora-31
           - debian-buster
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
@@ -24,10 +24,15 @@ jobs:
           lsb_release -a
           sudo docker --version
 
-      - name: Prepare container, run, test and cleanup
+      - name: Prepare and run container
         run: |
           sudo ./testing/1_create.sh ${{matrix.distro}}
-          export container_id=$(mktemp)
-          sudo ./testing/2_run.sh ${{matrix.distro}} ${container_id}
-          sudo docker exec "$(cat ${container_id})" /etc/ansible/roles/git-tools/testing/4_test.sh --idempotence
-          sudo ./testing/5_remove.sh ${container_id}
+          sudo ./testing/2_run.sh ${{matrix.distro}}
+
+      - name: Test ansible
+        run: |
+          sudo docker exec test-container /etc/ansible/roles/git-tools/testing/4_test.sh --idempotence
+
+      - name: Cleanup
+        run: |
+          sudo ./testing/5_remove.sh

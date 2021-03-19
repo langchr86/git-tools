@@ -1,5 +1,3 @@
-#! /bin/sh
+#! /bin/bash -e
 
-container_id=${1:-/tmp/git-tools-docker-id}
-
-docker exec -it "$(cat ${container_id})" /bin/sh
+docker exec -it test-container /bin/sh

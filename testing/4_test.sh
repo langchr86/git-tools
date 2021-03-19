@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash -e
 
 idempotence=$1
 
