@@ -11,6 +11,7 @@
     - {name: 'alias.st', value: 'status --short'}
     - {name: 'alias.rank', value: 'shortlog -sn --no-merges'}
     - {name: 'alias.br', value: 'branch'}
+    - {name: 'alias.bra', value: 'branch --all'}
     - {name: 'alias.rpo', value: 'remote prune origin'}
     - {name: 'alias.spu', value: 'stash push'}
     - {name: 'alias.spo', value: 'stash pop'}
