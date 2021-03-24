@@ -29,6 +29,7 @@
     - {name: 'alias.bs', value: 'bisect skip'}
     - {name: 'alias.pushfwl', value: 'push --force-with-lease'}
     - {name: 'alias.pusho', value: "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"}
+    - {name: 'alias.pushdel', value: 'push origin --delete'}
     - {name: 'alias.chp', value: 'cherry-pick'}
     - {name: 'alias.reh', value: 'reset --hard'}
     - {name: 'alias.res', value: 'reset --soft'}
