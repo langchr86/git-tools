@@ -37,4 +37,5 @@
     - {name: 'alias.k', value: "!gitk --all"}
     - {name: 'alias.g', value: "!git gui"}
     - {name: 'alias.fix', value: "!fix() { git commit --fixup $1 && GIT_SEQUENCE_EDITOR=: git rebase --interactive --autosquash --autostash $1~1; }; fix"}
+    - {name: 'alias.loc', value: "!loc() { git ls-files | grep -P \".*\\.($1)$\" | xargs wc -l; }; loc"}
     - {name: 'alias.l', value: 'log --oneline'}

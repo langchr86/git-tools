@@ -29,6 +29,17 @@ $ git fix <commit-hash>
 // this results in rebasing and therefore changing the history until the selected commit
 ~~~
 
+Or `git loc <file_ending>` which shows the count of lines (loc) in files matching the pattern given by `<file_ending>`.
+
+~~~
+// count lines in all ".cpp" files
+$ git loc cpp
+
+// count lines in all ".cpp" and ".h" files
+$ git loc "cpp|h"
+// "" or '' are needed to interpret | as part of the regex used internally and not as pipe operator of the shell
+~~~
+
 ### Prompt
 
 ![prompt](images/git-prompt.png)
