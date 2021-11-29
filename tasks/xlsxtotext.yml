@@ -1,9 +1,9 @@
 ---
 - name: install tools for xlsxtotext
   become: yes
-  package: name={{ item }}
-  with_items:
-    - gnumeric
+  package:
+    name:
+      - gnumeric
 
 - import_tasks: tasks/ensure_local_folders.yml
 

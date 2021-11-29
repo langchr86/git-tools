@@ -1,12 +1,12 @@
 ---
 - name: install tools for archivetotext
   become: yes
-  package: name={{ item }}
-  with_items:
-    - unzip
-    - gzip
-    - bzip2
-    - tar
+  package:
+    name:
+      - unzip
+      - gzip
+      - bzip2
+      - tar
 
 - name: define git attributes
   lineinfile:

@@ -1,9 +1,9 @@
 ---
 - name: install tools for docxtotext
   become: yes
-  package: name={{ item }}
-  with_items:
-    - catdoc
+  package:
+    name:
+      - catdoc
 
 - import_tasks: tasks/ensure_local_folders.yml
 

@@ -1,9 +1,9 @@
 ---
 - name: install tools for pdftotext
   become: yes
-  package: name={{ item }}
-  with_items:
-    - poppler-utils
+  package:
+    name:
+      - poppler-utils
 
 - import_tasks: tasks/ensure_local_folders.yml
 

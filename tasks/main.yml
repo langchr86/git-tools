@@ -4,11 +4,11 @@
 
 - name: install git tools
   become: yes
-  package: name={{ item }}
-  with_items:
-    - git
-    - git-gui
-    - gitk
+  package:
+    name:
+      - git
+      - git-gui
+      - gitk
 
 - name: set user global push strategy to simple
   git_config:
