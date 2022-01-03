@@ -2,13 +2,18 @@
 - import_tasks: tasks/centos_prerequisites.yml
   when: ansible_distribution == "CentOS"
 
-- name: install git tools
+- name: install git
+  become: yes
+  package:
+    name: git
+
+- name: install graphical git tools
+  when: git_graphical_tools
   become: yes
   package:
     name:
-      - git
-      - git-gui
-      - gitk
+    - git-gui
+    - gitk
 
 - name: set user global push strategy to simple
   git_config:
