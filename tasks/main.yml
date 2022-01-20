@@ -21,11 +21,11 @@
     name: "push.default"
     value: "{{ git_push_strategy }}"
 
-- name: set user global pull strategy to always use --rebase
+- name: "set user global pull --rebase strategy to '{{ git_pull_rebase | string | lower }}'"
   git_config:
     scope: global
     name: "pull.rebase"
-    value: "true"
+    value: "{{ git_pull_rebase | string | lower }}"
 
 - import_tasks: tasks/user.yml
   when: git_user_name != ""

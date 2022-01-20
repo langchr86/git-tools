@@ -9,6 +9,7 @@ git_user_email: "{{ git_user_name }}@gmail.com"     # e-mail address shown in gi
 
 # Specific Git behaviour / configuration
 git_push_strategy: "simple"
+git_pull_rebase: yes
 
 # Additional features that can be enabled.
 git_graphical_tools: on # install graphical git tools
