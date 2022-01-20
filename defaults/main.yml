@@ -12,6 +12,41 @@ git_push_strategy: "simple"
 git_pull_rebase: yes
 git_rebase_autosquash: no
 git_branch_autosetuprebase: "never"
+git_alias_list:
+  - {alias: 'bb', cmd: 'bisect bad'}
+  - {alias: 'bg', cmd: 'bisect good'}
+  - {alias: 'br', cmd: 'branch'}
+  - {alias: 'bra', cmd: 'branch --all'}
+  - {alias: 'bs', cmd: 'bisect skip'}
+  - {alias: 'chp', cmd: 'cherry-pick'}
+  - {alias: 'ci', cmd: 'commit'}
+  - {alias: 'co', cmd: 'checkout'}
+  - {alias: 'cob', cmd: 'checkout -b'}
+  - {alias: 'fix', cmd: "!fix() { git commit --fixup $1 && GIT_SEQUENCE_EDITOR=: git rebase --interactive --autosquash --autostash $1~1; }; fix"}
+  - {alias: 'g', cmd: "!git gui"}
+  - {alias: 'k', cmd: "!gitk --all"}
+  - {alias: 'l', cmd: 'log --oneline'}
+  - {alias: 'loc', cmd: "!loc() { git ls-files | grep -P \".*\\.($1)$\" | xargs wc -l; }; loc"}
+  - {alias: 'ma', cmd: 'merge --abort'}
+  - {alias: 'mc', cmd: 'merge --continue'}
+  - {alias: 'mq', cmd: 'merge --quit'}
+  - {alias: 'pushdel', cmd: 'push origin --delete'}
+  - {alias: 'pushfwl', cmd: 'push --force-with-lease'}
+  - {alias: 'pusho', cmd: "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"}
+  - {alias: 'ra', cmd: 'rebase --abort'}
+  - {alias: 'rank', cmd: 'shortlog -sn --no-merges'}
+  - {alias: 'rc', cmd: 'rebase --continue'}
+  - {alias: 'reh', cmd: 'reset --hard'}
+  - {alias: 'res', cmd: 'reset --soft'}
+  - {alias: 'reso', cmd: 'reset --soft HEAD~'}
+  - {alias: 'ri', cmd: 'rebase -i'}
+  - {alias: 'ro', cmd: 'rebase --onto'}
+  - {alias: 'rpo', cmd: 'remote prune origin'}
+  - {alias: 'rs', cmd: 'rebase --skip'}
+  - {alias: 'sdr', cmd: 'stash drop'}
+  - {alias: 'spo', cmd: 'stash pop'}
+  - {alias: 'spu', cmd: 'stash push'}
+  - {alias: 'st', cmd: 'status --short'}
 
 # Additional features that can be enabled.
 git_graphical_tools: on # install graphical git tools
