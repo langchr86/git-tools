@@ -7,6 +7,9 @@ git_user_home: "{{ ansible_env.HOME  | d('/root') }}"
 git_user_name: ""                                   # name shown in git history
 git_user_email: "{{ git_user_name }}@gmail.com"     # e-mail address shown in git history
 
+# Specific Git behaviour / configuration
+git_push_strategy: "simple"
+
 # Additional features that can be enabled.
 git_graphical_tools: on # install graphical git tools
 git_aliases: off        # enable predefined git aliases

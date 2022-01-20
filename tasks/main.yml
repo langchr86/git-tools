@@ -15,11 +15,11 @@
     - git-gui
     - gitk
 
-- name: set user global push strategy to simple
+- name: "set user global push strategy to '{{ git_push_strategy }}'"
   git_config:
     scope: global
     name: "push.default"
-    value: "simple"
+    value: "{{ git_push_strategy }}"
 
 - name: set user global pull strategy to always use --rebase
   git_config:
