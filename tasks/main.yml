@@ -27,6 +27,18 @@
     name: "pull.rebase"
     value: "{{ git_pull_rebase | string | lower }}"
 
+- name: "set user global rebase autosquash to '{{ git_rebase_autosquash | string | lower }}'"
+  git_config:
+    scope: global
+    name: "rebase.autosquash"
+    value: "{{ git_rebase_autosquash | string | lower }}"
+
+- name: "set user global branch autosetuprebase to '{{ git_branch_autosetuprebase }}'"
+  git_config:
+    scope: global
+    name: "branch.autosetuprebase"
+    value: "{{ git_branch_autosetuprebase }}"
+
 - import_tasks: tasks/user.yml
   when: git_user_name != ""
 
