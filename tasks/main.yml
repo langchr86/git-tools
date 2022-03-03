@@ -1,5 +1,5 @@
 ---
-- import_tasks: tasks/centos_prerequisites.yml
+- import_tasks: centos_prerequisites.yml
   when: ansible_distribution == "CentOS"
 
 - name: install git
@@ -39,26 +39,26 @@
     name: "branch.autosetuprebase"
     value: "{{ git_branch_autosetuprebase }}"
 
-- import_tasks: tasks/user.yml
+- import_tasks: user.yml
   when: git_user_name != ""
 
-- import_tasks: tasks/aliases.yml
+- import_tasks: aliases.yml
   when: git_aliases
 
-- import_tasks: tasks/archivestotext.yml
+- import_tasks: archivestotext.yml
   when: git_archivestotext
-- import_tasks: tasks/docxtotext.yml
+- import_tasks: docxtotext.yml
   when: git_docxtotext
-- import_tasks: tasks/pdftotext.yml
+- import_tasks: pdftotext.yml
   when: git_pdftotext
-- import_tasks: tasks/xlsxtotext.yml
+- import_tasks: xlsxtotext.yml
   when: git_xlsxtotext
 
-- import_tasks: tasks/rerere.yml
+- import_tasks: rerere.yml
   when: git_rerere
 
-- import_tasks: tasks/editor_nano.yml
+- import_tasks: editor_nano.yml
   when: git_editor_nano
 
-- import_tasks: tasks/prompt.yml
+- import_tasks: prompt.yml
   when: git_prompt

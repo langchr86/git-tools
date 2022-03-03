@@ -1,12 +1,12 @@
 ---
-- import_tasks: tasks/ensure_local_folders.yml
+- import_tasks: ensure_local_folders.yml
 
 - name: add git-prompt.bash
   copy:
     src: "git-prompt.bash"
     dest: "{{ git_user_home }}/.local/share"
 
-- import_tasks: tasks/ensure_unix_line_endings.yml
+- import_tasks: ensure_unix_line_endings.yml
   vars:
     file_path: "{{ git_user_home }}/.local/share/git-prompt.bash"
 

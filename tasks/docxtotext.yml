@@ -5,7 +5,7 @@
     name:
       - catdoc
 
-- import_tasks: tasks/ensure_local_folders.yml
+- import_tasks: ensure_local_folders.yml
 
 - name: add git-docxtotext
   copy:
@@ -17,7 +17,7 @@
     path: "{{ git_docxtotext_file }}"
     mode: 0755
 
-- import_tasks: tasks/ensure_unix_line_endings.yml
+- import_tasks: ensure_unix_line_endings.yml
   vars:
     file_path: "{{ git_docxtotext_file }}"
 
