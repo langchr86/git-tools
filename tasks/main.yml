@@ -3,13 +3,13 @@
   when: ansible_distribution == "CentOS"
 
 - name: install git
-  become: yes
+  become: true
   package:
     name: git
 
 - name: install graphical git tools
   when: git_graphical_tools
-  become: yes
+  become: true
   package:
     name:
     - git-gui

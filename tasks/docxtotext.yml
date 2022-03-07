@@ -1,6 +1,6 @@
 ---
 - name: install tools for docxtotext
-  become: yes
+  become: true
   package:
     name:
       - catdoc
@@ -28,7 +28,7 @@
     line: "{{ item.line }}"
     state: present
     insertafter: EOF
-    create: yes
+    create: true
   with_items:
     - {regexp: "^[*][.]docx diff=", line: "*.docx diff=docxtotext"}
     - {regexp: "^[*][.]doc diff=", line: "*.doc diff=catdoc"}

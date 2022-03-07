@@ -9,8 +9,8 @@ git_user_email: "{{ git_user_name }}@gmail.com"     # e-mail address shown in gi
 
 # Specific Git behaviour / configuration
 git_push_strategy: "simple"
-git_pull_rebase: yes
-git_rebase_autosquash: no
+git_pull_rebase: true
+git_rebase_autosquash: false
 git_branch_autosetuprebase: "never"
 git_alias_list:
   - {alias: 'bb', cmd: 'bisect bad'}
@@ -49,13 +49,13 @@ git_alias_list:
   - {alias: 'st', cmd: 'status --short'}
 
 # Additional features that can be enabled.
-git_graphical_tools: on # install graphical git tools
-git_aliases: off        # enable predefined git aliases
-git_rerere: off         # enable rerere in git config
-git_editor_nano: off    # install and define nano as git editor
-git_prompt: off         # install some scripts and define prompt to show git branch. Needs bash!
+git_graphical_tools: true # install graphical git tools
+git_aliases: false        # enable predefined git aliases
+git_rerere: false         # enable rerere in git config
+git_editor_nano: false    # install and define nano as git editor
+git_prompt: false         # install some scripts and define prompt to show git branch. Needs bash!
 
-git_archivestotext: off # enable diff of archive files
-git_docxtotext: off     # enable diff of doc/docx files
-git_pdftotext: off      # enable diff of pdf files
-git_xlsxtotext: off     # enable diff of xls/xlsx files
+git_archivestotext: false # enable diff of archive files
+git_docxtotext: false     # enable diff of doc/docx files
+git_pdftotext: false      # enable diff of pdf files
+git_xlsxtotext: false     # enable diff of xls/xlsx files

@@ -3,21 +3,22 @@
 
   pre_tasks:
     - name: Update package manager repositories
-      become: yes
-      package: update_cache=yes
+      become: true
+      package:
+        update_cache: true
       changed_when: false
 
   roles:
     - { role: git-tools,
         #git_user_name: "Christian Lang",
         #git_user_email: "lang.chr86@gmail.com",
-        git_graphical_tools: on,
-        git_aliases: on,
-        git_rerere: on,
-        git_editor_nano: on,
-        git_prompt: on,
-        git_archivestotext: on,
-        git_docxtotext: on,
-        git_pdftotext: on,
-        git_xlsxtotext: on,
+        git_graphical_tools: true,
+        git_aliases: true,
+        git_rerere: true,
+        git_editor_nano: true,
+        git_prompt: true,
+        git_archivestotext: true,
+        git_docxtotext: true,
+        git_pdftotext: true,
+        git_xlsxtotext: true,
     }

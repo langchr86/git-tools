@@ -1,6 +1,6 @@
 ---
 - name: install nano
-  become: yes
+  become: true
   package:
     name: "nano"
 

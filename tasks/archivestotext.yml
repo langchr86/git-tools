@@ -1,6 +1,6 @@
 ---
 - name: install tools for archivetotext
-  become: yes
+  become: true
   package:
     name:
       - unzip
@@ -15,7 +15,7 @@
     line: "{{ item.line }}"
     state: present
     insertafter: EOF
-    create: yes
+    create: true
   with_items:
     - {regexp: "^[*][.]zip diff=", line: "*.zip diff=zip"}
     - {regexp: "^[*][.]gz diff=", line: "*.gz diff=gzip"}

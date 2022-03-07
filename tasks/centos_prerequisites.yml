@@ -1,6 +1,6 @@
 ---
 - name: add LUX repo for centos 7
-  become: yes
+  become: true
   package:
     name:
       - "http://repo.iotti.biz/CentOS/7/noarch/lux-release-7-1.noarch.rpm"

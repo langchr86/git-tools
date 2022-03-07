@@ -1,6 +1,6 @@
 ---
 - name: install tools for xlsxtotext
-  become: yes
+  become: true
   package:
     name:
       - gnumeric
@@ -28,7 +28,7 @@
     line: "{{ item.line }}"
     state: present
     insertafter: EOF
-    create: yes
+    create: true
   with_items:
     - {regexp: "^[*][.]xls diff=", line: "*.xls diff=xlsxtotext"}
     - {regexp: "^[*][.]xlsx diff=", line: "*.xlsx diff=xlsxtotext"}
