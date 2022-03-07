@@ -9,16 +9,16 @@
       changed_when: false
 
   roles:
-    - { role: git-tools,
-        # git_user_name: "Christian Lang",
-        # git_user_email: "lang.chr86@gmail.com",
-        git_graphical_tools: true,
-        git_aliases: true,
-        git_rerere: true,
-        git_editor_nano: true,
-        git_prompt: true,
-        git_archivestotext: true,
-        git_docxtotext: true,
-        git_pdftotext: true,
-        git_xlsxtotext: true,
-    }
+    - role: git-tools
+      vars:
+        # git_user_name: "Christian Lang"
+        # git_user_email: "lang.chr86@gmail.com"
+        git_graphical_tools: true
+        git_aliases: true
+        git_rerere: true
+        git_editor_nano: true
+        git_prompt: true
+        git_archivestotext: true
+        git_docxtotext: true
+        git_pdftotext: true
+        git_xlsxtotext: true
