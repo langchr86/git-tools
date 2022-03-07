@@ -11,10 +11,6 @@
   copy:
     src: "git-pdftotext"
     dest: "{{ git_pdftotext_file }}"
-
-- name: make script executable
-  file:
-    path: "{{ git_pdftotext_file }}"
     mode: 0755
 
 - import_tasks: ensure_unix_line_endings.yml
