@@ -2,6 +2,7 @@ git-tools
 =========
 
 [![Software Build](https://github.com/langchr86/git-tools/workflows/ansible_run/badge.svg)](https://github.com/langchr86/git-tools/actions?query=workflow%3Aansible_run)
+[![ansible_lint](https://github.com/langchr86/git-tools/actions/workflows/ansible_lint.yml/badge.svg)](https://github.com/langchr86/git-tools/actions/workflows/ansible_lint.yml)
 
 Ansible role which does prepare some usual needed settings, aliases and other tools for efficient git usage.
 
