@@ -12,8 +12,8 @@
   become: true
   package:
     name:
-    - git-gui
-    - gitk
+      - git-gui
+      - gitk
 
 - name: "set user global push strategy to '{{ git_push_strategy }}'"
   git_config:

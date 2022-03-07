@@ -10,8 +10,8 @@
 
   roles:
     - { role: git-tools,
-        #git_user_name: "Christian Lang",
-        #git_user_email: "lang.chr86@gmail.com",
+        # git_user_name: "Christian Lang",
+        # git_user_email: "lang.chr86@gmail.com",
         git_graphical_tools: true,
         git_aliases: true,
         git_rerere: true,
