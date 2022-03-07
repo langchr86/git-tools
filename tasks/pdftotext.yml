@@ -25,6 +25,7 @@
     state: present
     insertafter: EOF
     create: true
+    mode: "u+rw"
   with_items:
     - {regexp: "^[*][.]pdf diff=", line: "*.pdf diff=pdftotext"}
 

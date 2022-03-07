@@ -25,6 +25,7 @@
     state: present
     insertafter: EOF
     create: true
+    mode: "u+rw"
   with_items:
     - {regexp: "^[*][.]xls diff=", line: "*.xls diff=xlsxtotext"}
     - {regexp: "^[*][.]xlsx diff=", line: "*.xlsx diff=xlsxtotext"}

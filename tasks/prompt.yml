@@ -5,6 +5,7 @@
   copy:
     src: "git-prompt.bash"
     dest: "{{ git_user_home }}/.local/share"
+    mode: "u+rwx"
 
 - import_tasks: ensure_unix_line_endings.yml
   vars:

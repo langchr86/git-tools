@@ -16,6 +16,7 @@
     state: present
     insertafter: EOF
     create: true
+    mode: "u+rw"
   with_items:
     - {regexp: "^[*][.]zip diff=", line: "*.zip diff=zip"}
     - {regexp: "^[*][.]gz diff=", line: "*.gz diff=gzip"}

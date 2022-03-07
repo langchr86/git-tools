@@ -4,3 +4,4 @@
     path: "{{ file_path }}"
     regexp: "\r\n"
     replace: "\n"
+    mode: "u+r"

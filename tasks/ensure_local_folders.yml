@@ -2,9 +2,11 @@
 - name: "ensure local folder exists: '{{ git_user_home }}/.local/bin'"
   file:
     path: "{{ git_user_home }}/.local/bin"
+    mode: "u+rwx"
     state: directory
 
 - name: "ensure local folder exists: '{{ git_user_home }}/.local/share'"
   file:
     path: "{{ git_user_home }}/.local/share"
+    mode: "u+rwx"
     state: directory
