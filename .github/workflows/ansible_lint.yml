@@ -1,28 +1,13 @@
-name: ansible_lint
+name: ansible-lint
 
 on: [push, pull_request]
 
 jobs:
-  ansible_lint:
-    runs-on: ubuntu-20.04
+  ansible-lint:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: System information
-        run: |
-          uname -a
-          lsb_release -a
-          sudo docker --version
-
-      - name: Prepare and run container
-        run: |
-          sudo ./testing/1_create.sh linter
-          sudo ./testing/2_run.sh linter
+      - uses: actions/checkout@v3
 
       - name: Lint ansible
         run: |
-          sudo docker exec test-container /etc/ansible/roles/git-tools/testing/lint.sh
-
-      - name: Cleanup
-        run: |
-          sudo ./testing/5_remove.sh
+          sudo linting/lint.sh
