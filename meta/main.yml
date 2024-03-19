@@ -33,12 +33,6 @@ galaxy_info:
     - name: Centos
       versions:
         - 7
-    - name: Fedora
-      versions:
-        - 31
-    - name: Debian
-      versions:
-        - buster
 
   galaxy_tags:
     - git

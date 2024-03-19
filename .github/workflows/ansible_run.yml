@@ -11,8 +11,6 @@ jobs:
           - ubuntu-bionic
           - ubuntu-focal
           - centos-7
-          - fedora-31
-          - debian-buster
 
     runs-on: ubuntu-20.04
     steps:
