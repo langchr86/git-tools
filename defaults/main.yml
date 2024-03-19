@@ -23,6 +23,7 @@ git_alias_list:
   - {alias: 'co', cmd: 'checkout'}
   - {alias: 'cob', cmd: 'checkout -b'}
   - {alias: 'fix', cmd: "!fix() { git commit --fixup $1 && GIT_SEQUENCE_EDITOR=: git rebase --interactive --autosquash --autostash $1~1; }; fix"}
+  - {alias: 'fix-author', cmd: "!fix() { git rebase --rebase-merges $1 --exec 'git commit --amend --no-edit --reset-author'; }; fix"}
   - {alias: 'g', cmd: "!git gui"}
   - {alias: 'k', cmd: "!gitk --all"}
   - {alias: 'l', cmd: 'log --oneline'}
