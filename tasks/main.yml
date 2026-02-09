@@ -12,6 +12,15 @@
       - git-gui
       - gitk
 
+- name: get git version
+  command: git --version
+  register: git_version_output
+  changed_when: false
+
+- name: extract git version number from stdout
+  set_fact:
+    git_version: "{{ git_version_output.stdout.split()[2] }}"
+
 - name: "set user global push strategy to '{{ git_push_strategy }}'"
   git_config:
     scope: global
@@ -29,6 +38,13 @@
     scope: global
     name: "rebase.autosquash"
     value: "{{ git_rebase_autosquash | string | lower }}"
+
+- name: "set user global branch updateRefs to '{{ git_branch_updaterefs }}'"
+  git_config:
+    scope: global
+    name: "rebase.updateRefs"
+    value: "{{ git_branch_updaterefs | string | lower }}"
+  when: git_version is version('2.38', '>')
 
 - name: "set user global branch autosetuprebase to '{{ git_branch_autosetuprebase }}'"
   git_config:

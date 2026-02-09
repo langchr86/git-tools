@@ -16,6 +16,7 @@
         git_graphical_tools: true
         git_aliases: true
         git_rerere: true
+        git_branch_updaterefs: true
         git_editor_nano: true
         git_prompt: true
         git_archivestotext: true
