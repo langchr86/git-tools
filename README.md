@@ -66,7 +66,7 @@ Requirements
 ------------
 
 This role should work on most linux distributions.
-Tested on Ubuntu, Centos, Fedora and Debian.
+Tested on Ubuntu.
 See [`ansible_run.yml`](.github/workflows/ansible_run.yml) for more information about CI-testing.
 
 The only requirements is bash, if the `git_prompt`-feature is activated.

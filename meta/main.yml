@@ -30,9 +30,6 @@ galaxy_info:
       versions:
         - bionic
         - focal
-    - name: Centos
-      versions:
-        - 7
 
   galaxy_tags:
     - git

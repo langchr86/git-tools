@@ -1,7 +1,4 @@
 ---
-- import_tasks: centos_prerequisites.yml
-  when: ansible_distribution == "CentOS"
-
 - name: install git
   become: true
   package:
