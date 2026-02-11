@@ -11,6 +11,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # prepare ansible inventory file
-RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+RUN mkdir -p /etc/ansible/ \
+  && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 ENTRYPOINT ["/bin/systemd"]

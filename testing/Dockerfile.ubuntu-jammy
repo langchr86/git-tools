@@ -1,12 +1,9 @@
-FROM ubuntu:bionic
+FROM ubuntu:jammy
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     software-properties-common \
     systemd \
-  && apt-add-repository -y ppa:ansible/ansible \
-  && apt-get update \
-  && apt-get install -y --no-install-recommends \
     ansible \
   && apt-get clean \
   && apt-get autoclean \
@@ -17,4 +14,4 @@ RUN apt-get update \
 RUN mkdir -p /etc/ansible/ \
   && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
-ENTRYPOINT ["/bin/systemd"]
+ENTRYPOINT ["/bin/systemd", "--system"]

@@ -10,6 +10,8 @@ jobs:
         distro:
           - ubuntu-bionic
           - ubuntu-focal
+          - ubuntu-jammy
+          - ubuntu-noble
 
     runs-on: ubuntu-latest
     steps:
