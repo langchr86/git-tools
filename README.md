@@ -122,27 +122,19 @@ To develop and test this role the docker infrastructure, which is also used by t
 Ubuntu is used as distro by default.
 
 ~~~ {.bash}
-# Build the docker image.
+# Build the docker image, create container and run it with the correct mounted volumes.
 ./testing/1_create.sh
 
-# Create docker container and run it with the correct mounted volumes.
-./testing/2_run.sh
-
 # Connect into the container.
-./testing/3_connect.sh
+./testing/2_connect.sh
 
 # Now you are logged-in the docker container.
 
-cd /etc/ansible/roles/git-tools/
-./testing/4_test.sh
-
+/etc/ansible/roles/git-tools/testing/3_test.sh
 # Now the example playbook should run and you can test the installed features.
 
 # Leave the container with the following command when you are finished developing/testing.
 exit
-
-# Remove all signs of the docker container.
-./testing/5_remove.sh
 ~~~
 
 

@@ -24,12 +24,7 @@ jobs:
       - name: Prepare and run container
         run: |
           sudo ./testing/1_create.sh ${{matrix.distro}}
-          sudo ./testing/2_run.sh ${{matrix.distro}}
 
       - name: Test ansible
         run: |
-          sudo docker exec test-container /etc/ansible/roles/git-tools/testing/4_test.sh --idempotence
-
-      - name: Cleanup
-        run: |
-          sudo ./testing/5_remove.sh
+          sudo docker exec test-container /etc/ansible/roles/git-tools/testing/3_test.sh --idempotence
