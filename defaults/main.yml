@@ -45,6 +45,7 @@ git_alias_list:
   - {alias: 'ro', cmd: 'rebase --onto'}
   - {alias: 'rpo', cmd: 'remote prune origin'}
   - {alias: 'rs', cmd: 'rebase --skip'}
+  - {alias: 'rur', cmd: 'rebase --update-refs'}
   - {alias: 'sdr', cmd: 'stash drop'}
   - {alias: 'spo', cmd: 'stash pop'}
   - {alias: 'spu', cmd: 'stash push'}
